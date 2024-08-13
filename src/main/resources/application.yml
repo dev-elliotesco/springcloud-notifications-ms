@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: notifications-ms
+
+server:
+  port: 8084
