@@ -1,5 +1,6 @@
 package com.notifications.ms.controller;
 
+import com.notifications.ms.controller.docs.EmailDoc;
 import com.notifications.ms.model.EmailRequest;
 import com.notifications.ms.service.EmailService;
 import lombok.AllArgsConstructor;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/email")
-public class EmailController {
+public class EmailController implements EmailDoc {
 
     private EmailService emailService;
 
