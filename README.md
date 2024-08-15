@@ -1,7 +1,6 @@
 # Notifications Microservice 
 
 ## Descripción
-## Descripción
 Este es un microservicio de notificaciones desarrollado con Spring Boot y Spring Mail.
 Este microservicio se encarga del envío de correos electrónicos. 
 
