@@ -1,4 +1,4 @@
-package com.notifications.ms.model;
+package com.notifications.ms.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class EmailRequest {
+public class EmailDTO {
     private String to;
     private String subject;
     private String body;

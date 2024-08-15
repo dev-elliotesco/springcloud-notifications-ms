@@ -1,7 +1,7 @@
 package com.notifications.ms.controller;
 
 import com.notifications.ms.controller.docs.EmailDoc;
-import com.notifications.ms.model.EmailRequest;
+import com.notifications.ms.dto.EmailDTO;
 import com.notifications.ms.service.EmailService;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
@@ -21,8 +21,8 @@ public class EmailController implements EmailDoc {
 
     @SneakyThrows
     @PostMapping("/send")
-    public ResponseEntity<String> sendEmail(@RequestBody EmailRequest emailRequest){
-            emailService.senEmail(emailRequest);
+    public ResponseEntity<String> sendEmail(@RequestBody EmailDTO emailDTO){
+            emailService.senEmail(emailDTO);
             return new ResponseEntity<>("Email sent successfully", HttpStatus.OK);
     }
 }

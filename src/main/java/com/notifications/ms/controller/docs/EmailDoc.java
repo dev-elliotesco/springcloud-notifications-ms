@@ -1,6 +1,6 @@
 package com.notifications.ms.controller.docs;
 
-import com.notifications.ms.model.EmailRequest;
+import com.notifications.ms.dto.EmailDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -26,5 +26,5 @@ public interface EmailDoc {
                     content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)
             )
     })
-    public ResponseEntity<String> sendEmail(@RequestBody EmailRequest emailRequest);
+    public ResponseEntity<String> sendEmail(@RequestBody EmailDTO emailDTO);
 }
