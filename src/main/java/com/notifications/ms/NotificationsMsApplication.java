@@ -16,5 +16,4 @@ public class NotificationsMsApplication {
 		logger.info("Welcome to Notifications Microservice!");
 
 	}
-
 }
