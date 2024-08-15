@@ -50,6 +50,10 @@ Si estás utilizando Docker, puedes definir las variables de entorno en tu archi
    Puedes encontrar el código fuente y las instrucciones para ejecutar el servidor
    Eureka en el siguiente repositorio: [springcloud-eureka-service](https://github.com/dev-elliotesco/springcloud-eureka-service)
 
+3. Asegúrate de tener el servidor Gateway en ejecución.
+   Puedes encontrar el código fuente y las instrucciones para ejecutar el servidor
+   Gateway en el siguiente repositorio: [springcloud-gateway-service](https://github.com/dev-elliotesco/springcloud-gateway-service)
+
 ## Uso
 Pasos para ejecutar el proyecto.
 
