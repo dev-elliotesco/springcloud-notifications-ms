@@ -15,7 +15,7 @@ spring:
     from: ${MAIL_FROM
 
 server:
-  port: 8084
+  port: 0
 
 springdoc:
   api-docs:
