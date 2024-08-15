@@ -7,23 +7,24 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@Tag(name = "email controller" , description = "API exposed for sending emails")
+@Tag(name = "Email controller" , description = "API exposed for sending emails")
 public interface EmailDoc {
 
-    @Operation(summary = "send email",description = "this operation is for sending email")
+    @Operation(summary = "Send email",description = "This operation is for sending email")
     @ApiResponses(value ={
             @ApiResponse(
                     responseCode = "200",
-                    description = "email sent successfully",
+                    description = "Email sent successfully",
                     content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)
             ),
             @ApiResponse(
                     responseCode = "500",
-                    description = "internal server error",
+                    description = "Internal server error",
                     content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)
             )
     })
-    public String sendEmail(@RequestBody EmailRequest emailRequest);
+    public ResponseEntity<String> sendEmail(@RequestBody EmailRequest emailRequest);
 }
