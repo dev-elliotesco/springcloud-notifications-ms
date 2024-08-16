@@ -1,11 +1,9 @@
 package com.notifications.ms.service;
 
 import com.notifications.ms.dto.EmailDTO;
-import com.notifications.ms.exceptions.EmailNotSentException;
-import jakarta.mail.internet.MimeMessage;
 import lombok.AllArgsConstructor;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,18 +12,13 @@ public class EmailService {
 
     private JavaMailSender emailSender;
 
-    public void senEmail(EmailDTO emailDTO) throws EmailNotSentException {
-        try {
-            MimeMessage message = emailSender.createMimeMessage();
-            MimeMessageHelper helper = new MimeMessageHelper(message, true);
+    public void senEmail(EmailDTO emailDTO){
+        SimpleMailMessage mailMessage = new SimpleMailMessage();
 
-            helper.setTo(emailDTO.getTo());
-            helper.setSubject(emailDTO.getSubject());
-            helper.setText(emailDTO.getBody());
+        mailMessage.setTo(emailDTO.getTo());
+        mailMessage.setText(emailDTO.getBody());
+        mailMessage.setSubject(emailDTO.getSubject());
 
-            emailSender.send(message);
-        } catch (Exception e) {
-            throw new EmailNotSentException("Failed to send email: " + e.getMessage());
-        }
+        emailSender.send(mailMessage);
     }
 }
