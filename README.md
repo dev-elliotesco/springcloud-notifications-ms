@@ -10,6 +10,7 @@ Este microservicio se encarga del envío de correos electrónicos.
 - Java Development Kit (JDK) 17
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Spring Cloud](https://spring.io/projects/spring-cloud)
+- [Spring Cloud Gateway](https://spring.io/projects/spring-cloud-gateway)
 - [Spring Mail](https://docs.spring.io/spring-framework/docs/3.0.x/spring-framework-reference/html/mail.html)
 - [Eureka Server](https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-eureka-server.html)
 - [Gradle](https://gradle.org/)
