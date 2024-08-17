@@ -45,18 +45,18 @@ Estas variables de entorno son utilizadas en el archivo `src/main/resources/appl
 
 Por ejemplo, puedes definir las variables de entorno en tu sistema operativo o en tu IDE. Si estás utilizando IntelliJ IDEA, puedes definir las variables de entorno en la configuración de tu Run/Debug Configuration.
 
-Si estás utilizando Docker, puedes definir las variables de entorno en tu archivo `docker-compose.yml`.
-
-2. Asegúrate de tener el servidor Eureka en ejecución.
+2. Asegúrate de tener el servicio Eureka en ejecución.
    Puedes encontrar el código fuente y las instrucciones para ejecutar el servidor
    Eureka en el siguiente repositorio: [springcloud-eureka-service](https://github.com/dev-elliotesco/springcloud-eureka-service)
 
-3. Asegúrate de tener el servidor Gateway en ejecución.
+3. Asegúrate de tener el servicio Gateway en ejecución.
    Puedes encontrar el código fuente y las instrucciones para ejecutar el servidor
    Gateway en el siguiente repositorio: [springcloud-gateway-service](https://github.com/dev-elliotesco/springcloud-gateway-service)
 
 ## Uso
 Pasos para ejecutar el proyecto.
+
+### Localmente:
 
 ```bash
 # Comando para iniciar el proyecto usando Gradle
@@ -67,9 +67,34 @@ Pasos para ejecutar el proyecto.
 # O ejecutando el JAR directamente
 java -jar build/libs/notifications-ms-0.0.1-SNAPSHOT.jar
 ```
+Para generar el JAR:
 
 ```bash
-# O utilizando Docker Compose
+# Generando el JAR
+# Nota: Este comando compila el código, ejecuta las pruebas y genera el JAR
+/gradlew build
+```
+
+### Docker (Solo el servicio):
+
+```bash
+# Construye la imagen Docker
+docker build -t notifications-ms .
+
+# Ejecuta el contenedor Docker
+docker run -p xxxxx notifications-ms
+```
+
+### Docker Compose (Todos los servicios)
+
+```bash
+# Clona este repositorio del proyecto completo
+git clone https://github.com/dev-elliotesco/springcloud-demo-mr.git
+
+# Entra en el directorio del proyecto completo
+cd springcloud-demo-mr
+
+# Ejecuta Docker Compose
 docker-compose up
 ```
 
